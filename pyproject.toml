@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nvdi"
+version = "0.1.0"
+description = "NVD command-line tool for searching, monitoring, and analyzing CVEs"
+authors = [
+  {name = "Supun Hewagamage"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+dependencies = [
+  "typer[all]>=0.7",
+  "httpx>=0.23",
+  "pydantic>=1.10",
+  "diskcache>=5.4",
+  "aiosqlite>=0.18",
+  "rich>=13.0",
+  "toml>=0.10"
+]
+
+[project.scripts]
+nvdi = "nvdi_cli.main:app"

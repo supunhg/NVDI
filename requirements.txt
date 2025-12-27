@@ -1,0 +1,7 @@
+typer[all]>=0.7.0
+httpx>=0.23.0
+pydantic>=1.10.0
+diskcache>=5.4.0
+aiosqlite>=0.18.0
+rich>=13.0.0
+toml>=0.10.0
