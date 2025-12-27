@@ -41,11 +41,9 @@ def print_cve(cve: CVEModel) -> None:
     
     table = Table(title=f"[bold cyan]{cve.id}[/bold cyan]", show_header=False, box=None)
     table.add_column("Field", style="bold cyan", width=20)
-    table.add_column("Value")
+    table.add_column("Value", overflow="fold")
     
     desc = cve.description or "No description available"
-    if len(desc) > 100:
-        desc = desc[:300] + "..."
     
     table.add_row("Description", desc)
     table.add_row("Published", cve.publishedDate or "N/A")

@@ -18,6 +18,19 @@
 
 ## Installation
 
+### Option 1: Binary (Recommended)
+
+Download the pre-built binary from [releases](https://github.com/supunhg/nvdi/releases) or build it yourself:
+
+```bash
+./build.sh
+sudo cp dist/nvdi /usr/local/bin/
+```
+
+The binary includes Python runtime and all dependencies - no installation required.
+
+### Option 2: From Source
+
 ```bash
 ./setup.sh
 source .venv/bin/activate
@@ -121,6 +134,34 @@ nvdi/
 ├── .nvdi-cache/        # Cache directory
 └── requirements.txt    # Dependencies
 ```
+
+## Development
+
+### Running Tests
+```bash
+./test.sh
+```
+
+This runs 39 comprehensive tests covering:
+- CLI structure and commands
+- Database operations (save, retrieve, search, reset)
+- CVE retrieval (basic, full, field selection)
+- Search functionality with CVSS filtering
+- Export formats (JSON, CSV, YAML, TXT)
+- Product monitoring
+- Statistics generation
+
+### Building Binary
+```bash
+./build.sh
+```
+
+Creates a standalone executable at `dist/nvdi` (~40-50MB) that includes:
+- Python 3.x runtime
+- All dependencies
+- Rich terminal UI assets
+
+The binary can be distributed without requiring users to install Python or any dependencies.
 
 ## License
 
