@@ -156,7 +156,7 @@ This runs 39 comprehensive tests covering:
 ./build.sh
 ```
 
-Creates a standalone executable at `dist/nvdi` (~40-50MB) that includes:
+Creates a standalone executable at `dist/nvdi` (~15-25MB) that includes:
 - Python 3.x runtime
 - All dependencies
 - Rich terminal UI assets
