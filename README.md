@@ -102,9 +102,32 @@ nvdi stats show --year 2023
 
 ## Configuration
 
-Create a `.env` file:
+On first run, nvdi automatically creates `~/.config/nvdi/config.toml`. The tool supports multiple configuration methods (checked in this order):
+
+### 1. Environment Variable
 ```bash
-NVD_API_KEY=your-api-key-here
+export NVD_API_KEY=your-api-key-here
+nvdi get cve CVE-2021-44228
+```
+
+### 2. .env File
+Create a `.env` file in your current directory:
+```bash
+echo "NVD_API_KEY=your-api-key-here" > .env
+nvdi get cve CVE-2021-44228
+```
+
+Or in `~/.config/nvdi/.env` for global configuration:
+```bash
+echo "NVD_API_KEY=your-api-key-here" > ~/.config/nvdi/.env
+```
+
+### 3. Config File (Auto-created)
+Edit the auto-generated `~/.config/nvdi/config.toml`:
+```toml
+[api.nvd]
+key = "your-api-key-here"  # Add your key here
+cache_ttl = 3600
 ```
 
 Get your API key from: https://nvd.nist.gov/developers/request-an-api-key

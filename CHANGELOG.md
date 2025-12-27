@@ -19,6 +19,9 @@ All notable changes to nvdi will be documented in this file.
 - Comprehensive test suite (39 tests)
 - PyInstaller binary packaging
 - Virtual environment isolation
+- Automatic config directory and template creation on first run
+- Support for .env files (current directory or ~/.config/nvdi/.env)
+- Multiple configuration methods (environment, .env, config.toml)
 
 ### Features
 - **Get CVE**: Retrieve CVE data with `--full` or `--fields` options
